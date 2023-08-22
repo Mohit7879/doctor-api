@@ -5,20 +5,19 @@ const doctorSchema= new mongoose.Schema({
 
     name:{
         type:String,
-        required:true,
+       
     },
 
     contact:{
         type:Number,
         required:true,
     },
+    password:{
+        type:String,
+        required:true,
+    },
 
-    patient:[
-        {
-            type:mongoose.Schema.Types.ObjectId,
-            ref:'Patient',
-        }
-    ],
+ 
 })
 
 
