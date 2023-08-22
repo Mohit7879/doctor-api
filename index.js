@@ -47,9 +47,9 @@ app.use(passport.setAuthenticatedUser);
 
 
 //
-
+const db="mongodb+srv://mohityadavkkn25:mohit@cluster0.hwrm7lq.mongodb.net/doc?retryWrites=true&w=majority"
 //app connection to mongodb
-mongoose.connect('mongodb://127.0.0.1:27017/doctor_api',{useNewUrlParser:true,useUnifiedTopology:true})
+mongoose.connect(db)
 .then(()=> {
     console.log("App is now connected to DB")
 }).catch((err)=> {
