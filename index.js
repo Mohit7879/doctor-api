@@ -47,7 +47,7 @@ app.use(passport.setAuthenticatedUser);
 
 
 //
-const db="mongodb+srv://mohityadavkkn25:mohit@cluster0.hwrm7lq.mongodb.net/doc?retryWrites=true&w=majority"
+const db="mongodb+srv://mohityadavkkn25:mohit@cluster0.hwrm7lq.mongodb.net/?retryWrites=true&w=majority"
 //app connection to mongodb
 mongoose.connect(db)
 .then(()=> {
