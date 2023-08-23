@@ -2,12 +2,12 @@ const Doctor=require('../models/doctor');
 const jwt=require('jsonwebtoken');
 
 module.exports.login= async(req,res)=>{
-
+  
     try{
 
         let doctor= await Doctor.findOne({contact: req.body.contact})
 
-       // console.log('inside strategy');
+        console.log(doctor.password,req.body.password);
           
 
         if (!doctor || doctor.password != req.body.password){
@@ -23,7 +23,7 @@ module.exports.login= async(req,res)=>{
             }
 
           });
-      //   return res.redirect('/patient/regester')
+      
        
 
       

@@ -29,8 +29,5 @@ module.exports.create=async(req,res)=>{
   
 }
 
-module.exports.register=async(req,res)=>{
 
-    res.status(200).json({message:'patient regester'})
-   
-}
+

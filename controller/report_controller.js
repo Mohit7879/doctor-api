@@ -25,8 +25,10 @@ module.exports.allreports=async(req,res)=>{
 
  const reports=await Patient.findById(req.params.id).populate( {path: 'report',
  options: { sort: { date: 1 } }})
- console.log(reports);
- return res.status(200);
+ //console.log(reports);
+ return res.status(200).json({
+    data:reports,
+ })
  
 
 
@@ -36,11 +38,11 @@ module.exports.allreports=async(req,res)=>{
 
 module.exports.patientbystatus=async(req,res)=>{
           
-    const all_patients=await Report.find({status:'positive'}).populate('patient');
+    const all_patients=await Report.find({status:req.query.status}).populate('patient');
 
     console.log(all_patients);
 
-    return res.status(200).json({message:'done'});
+    return res.status(200).json({data:all_patients});
   
 
 }

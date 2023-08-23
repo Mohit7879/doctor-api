@@ -7,18 +7,13 @@ module.exports.regester=async(req,res)=>{
         contact:req.body.contact,
     })
 
-    console.log("^&&&&&&",isexist)
+    
 
-    if(isexist) return res.render('patient');
+    if(isexist) return res.status(200).json({message:'already regestered'})
           await Doctor.create(req.body)
-          return res.send('created');
+          return res.status(200).json({message:'regestration successfull'})
 
 }
 
 
-// module.exports.login=(req,res)=>{
-
-//   return res.send('login done')
-     
-// }
 
